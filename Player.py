@@ -26,6 +26,7 @@ class Player(object):
         self.max_hp = 0
         self.skills = []
         self.inventory = []
+        self.weapons = []
         self.xp = 0
         
      def add_inv(self, item):
@@ -56,7 +57,7 @@ class Player(object):
         
      def create_char(self, name):
         self.name = name
-        select_cls(name)
         select_race(name)
+        select_cls(name)
         # Do rolls for character attributes and add race/class bonuses
         
