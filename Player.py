@@ -1,5 +1,4 @@
 #from xlrd import * # Need to install xlrd
-from random import randint
 
 class Player:
     """Represents a player's character sheet"""
@@ -17,16 +16,19 @@ class Player:
 
     def __init__(self):
         self.name = ''
-        self.level = 1
         self.cls = ''
         self.race = ''
         self.background = ''
         self.ability_score = {"Str": 0, "Dex": 0, "Con": 0,
                               "Int": 0, "Wis": 0, "Cha": 0}
-        self.modifiers = [0, 0, 0, 0, 0, 0]
+        self.modifiers = {"Str": 0, "Dex": 0, "Con": 0,
+                          "Int": 0, "Wis": 0, "Cha": 0}
+        self.saving_throws = {"Str": 0, "Dex": 0, "Con": 0,
+                              "Int": 0, "Wis": 0, "Cha": 0}
         self.ac = 0
         self.initiative = 0
         self.speed = 0
+        self.hit_dice = [0, 0] # num D sides
         self.max_hp = 0
         self.skills = {"Acrobatics": 0, "Animal Herding": 0, "Arcana": 0, "Athletics": 0,
                        "Deception": 0, "History": 0, "Insight": 0, "Intimidation": 0,
@@ -39,7 +41,13 @@ class Player:
         self.xp = 0
         self.carry = 0
         self.pass_perc = 0
-        self.death_saves = (0, 0)  #(Success, Failures) -> counts up to 3 for both
-        self.proficiencies = []
-        self.height = (0, 0)    #(Feet, Inches)
+        self.death_saves = [0, 0]  #(Success, Failures) -> counts up to 3 for both
+        self.profs = []
+        self.traits = []
+        self.height = [0, 0]    #(Feet, Inches)
         self.weight = 0         # in lbs
+        self.prof_bonus = 0
+        self.cantrips = []
+        self.spell_slots = 0
+        self.avail_spells = []
+        self.equipped_spells = []

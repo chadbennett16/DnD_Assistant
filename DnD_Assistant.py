@@ -18,7 +18,7 @@ from Player import Player
 from Char_Win import Char_Win
 from tkinter import *
 
-players = []    # A list of all currently assigned players, starts empty
+players = []
 
 c = Player()
 root = Tk()
@@ -26,9 +26,11 @@ Char_Win(root, c)
 root.mainloop()
 
 print(c.name)
-print(c.level)
 print(c.race)
 print(c.cls)
 print(c.background)
 print(c.height)
 print(c.weight)
+print(c.ability_score)
+print(c.profs)
+print(c.traits)
